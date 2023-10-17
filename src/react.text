@@ -1,0 +1,93 @@
+React components are the heart of React application
+
+1.function component
+  function functionName(){
+    return(
+      <div>
+       HTML code goes here..
+ 	  </div>
+    )
+}
+Exporting a component
+ a.default export 
+  function functionName(){
+    return(
+      <div>
+       HTML code goes here..
+ 	  </div>
+    )
+  }
+  export default functionName;
+ Note: a document cannot export more default export 
+ 
+ b. namespace export 
+ 
+ export function functionName(){
+    return(
+      <div>
+       HTML code goes here..
+ 	  </div>
+    )
+}
+
+Importing a component 
+a.default component 
+ import anyName from filePath;
+b. namespace export
+import {sameName} from filePath;
+
+2.class component
+import {Component}  from 'react';
+ class ClassName extends Component{
+    render(){
+        return(
+            <div>
+            HTML CONTENT GOES HERE..
+            </div>
+        )
+    }
+ }
+
+ Difference between function component and class componenet
+old versions
+Function component is considered as stateless component
+Lifecycle is not present
+
+Class component are stateful component
+Lifecycle is present in class component
+
+what is state-> Internal memory of a component
+
+Latest version
+Function components can also have state with the help of hocks
+
+
+State and props
+
+props-> used totransfer the data from one component to another component[parent component to child component]
+props are immutable
+State->mutable (can be changed)
+
+One way data binding
+view to component
+component to view
+Example:<input placeholder="Enter your name" onChange={this.handleChange} />
+        <p>YOUR NAME IS: {this.state.name}</p>
+
+Lifecycle of class component
+
+1.Initial Phase
+  default the value of state and props 
+2.Mounting Phase
+  a.constructor()->used to construct a class component
+  b.getDerviedStateFromProps()->used to get the value of state and props
+  c.render()->used to render the webpage
+  d.componentDidMount()->used to work with side effect
+3.Updating Phase
+  a.getDerivedStateFromProps()->used to get the value of state and props
+  b.shouldComponentUpdate()->used to declare whether the component should update 
+  c.render()->used to render the updated webpage
+  d.getSnapshotBeforeUpdate()->used to store the previous state and props value
+  e.componentDidUpdate->used to work with side effects
+4.Unmounting phase
+  a.componentWillUnmount->when the component is being removed
